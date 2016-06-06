@@ -7,12 +7,6 @@ const byte appKey[16] = { <insert AppKey> }; //for example: {0x73, 0x6D, 0x24, 0
 #define debugSerial Serial
 #define loraSerial Serial1
 
-// Set your message to send
-String message = {"Hello world"}; //sending a string of chars "Hello world"
-
-// set your bytes to send
-byte data[2] = { 0x02, 0x12 }; //sending integers 2 and 18 in Heximals
-
 #define debugPrintLn(...) { if (debugSerial) debugSerial.println(__VA_ARGS__); }
 #define debugPrint(...) { if (debugSerial) debugSerial.print(__VA_ARGS__); }
 
