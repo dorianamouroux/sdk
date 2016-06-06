@@ -12,8 +12,7 @@ const byte appKey[16] = { <insert AppKey> }; //for example: {0x73, 0x6D, 0x24, 0
 
 TheThingsUno ttu;
 
-void setup()
-{
+void setup() {
   debugSerial.begin(115200);
   loraSerial.begin(57600);
 
@@ -22,15 +21,18 @@ void setup()
   ttu.reset();
   ttu.join(appEui, appKey);
 
-  delay(6000);
+  delay(4000);
   ttu.showStatus();
-  debugPrintLn("Setup for The Things Network complete");
 
-  delay(1000);
+  debugPrintLn("Setup for The Things Network complete");
 }
 
 void loop() {
+
+  //enable the send method of choice
+
   ttu.sendString("Hello world!");
+  //ttu.sendBytes(data,sizeof(data));
 
   delay(20000);
 }
